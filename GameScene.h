@@ -2,7 +2,8 @@
 
 #include "cocos2d.h"
 #include "GameLayer.h"
-#include "ControllLayer.h"
+#include "ControlLayer.h"
+#include "BackgroundLayer.h"
 
 using namespace cocos2d;
 

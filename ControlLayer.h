@@ -9,13 +9,13 @@ public:
 	virtual void onTouch() = 0;
 };
 
-class ControllLayer : public Layer{
+class ControlLayer : public Layer{
 public:
-	ControllLayer();
-	~ControllLayer();
+	ControlLayer();
+	~ControlLayer();
 
 	virtual bool init();
-	CREATE_FUNC(ControllLayer);
+	CREATE_FUNC(ControlLayer);
 
 	// override 
 	void onTouchesBegan(const std::vector<Touch *>& touches, Event *event);

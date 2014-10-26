@@ -4,12 +4,13 @@
 #include "cocos2d.h"
 #include "extensions/cocos-ext.h"
 #include "cocostudio/CocoStudio.h"
-
+#include "GameScene.h"
+#include "BackgroundLayer.h"
 
 class LoadLayer : public cocos2d::Layer
 {
 public:
-	static cocos2d::Scene* createScene();
+//	static cocos2d::Scene* createScene();
 	virtual void onEnter() override;
 	
 	void dataLoaded(float percent);

@@ -39,9 +39,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-  //  auto scene = HelloWorld::createScene();
-	auto scene = LoadLayer::createScene();
-	
+    auto scene = HelloWorld::createScene();
+//	auto scene = LoadLayer::createScene();
+	Layer *loaddata = new (std::nothrow) LoadLayer();
+	scene->addChild(loaddata);
     // run
     director->runWithScene(scene);
 

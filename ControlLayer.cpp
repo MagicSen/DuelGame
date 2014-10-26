@@ -1,17 +1,17 @@
-#include "ControllLayer.h"
+#include "ControlLayer.h"
 
-ControllLayer::ControllLayer()
+ControlLayer::ControlLayer()
 {}
 
-ControllLayer::~ControllLayer()
+ControlLayer::~ControlLayer()
 {}
 
-bool ControllLayer::init()
+bool ControlLayer::init()
 {
 	if(Layer::init()){
 		auto dispatcher = Director::getInstance()->getEventDispatcher();
 		auto listener = EventListenerTouchAllAtOnce::create();
-		listener->onTouchesBegan = CC_CALLBACK_2(ControllLayer::onTouchesBegan, this);
+		listener->onTouchesBegan = CC_CALLBACK_2(ControlLayer::onTouchesBegan, this);
 		// Set the event receiver.
 		dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 		return true;
@@ -20,7 +20,7 @@ bool ControllLayer::init()
 	}
 }
 
-void ControllLayer::onTouchesBegan(const std::vector<Touch *>& touches, Event *event)
+void ControlLayer::onTouchesBegan(const std::vector<Touch *>& touches, Event *event)
 {
 	this->delegator->onTouch();
 }

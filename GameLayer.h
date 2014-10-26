@@ -1,8 +1,11 @@
 #pragma once
 #include "cocos2d.h"
-#include "ControllLayer.h"
-
+#include "ControlLayer.h"
+#include "extensions/cocos-ext.h"
+#include "cocostudio/CocoStudio.h"
 using namespace cocos2d;
+using namespace ui;
+using namespace cocostudio;
 
 typedef enum _game_status{
 	GAME_STATUS_READY = 1,
@@ -18,6 +21,7 @@ public:
 };
 
 class GameLayer : public Layer, public ControllDelegate {
+
 public:
 	GameLayer();
 	~GameLayer();
@@ -26,8 +30,11 @@ public:
 
 	CC_SYNTHESIZE(StatusDelegate*, delegator, Delegator);
 	void onTouch();
-	void setPhyWorld(PhysicsWorld* world){this->worldToNodeTransform = world;}
-	void update(float delta);
+	void setPhyWorld(PhysicsWorld* world){this->world = world;}
+//	void update(float delta);
+	Size visiblesize;
+	Point origin;
+	Armature *hero;
 private:
 	bool onContactBegin(const PhysicsContact& contact);
 	void gameOver();

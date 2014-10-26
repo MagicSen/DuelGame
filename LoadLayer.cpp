@@ -4,7 +4,7 @@ using namespace cocos2d;
 using namespace cocostudio;
 using namespace ui;
 
-Scene* LoadLayer::createScene()
+/*Scene* LoadLayer::createScene()
 {
 	std::string _filePath = "publish/FightScene.json";
 	cocos2d::Node* _rootNode = SceneReader::getInstance()->createNodeWithSceneFile(_filePath.c_str());
@@ -20,7 +20,7 @@ Scene* LoadLayer::createScene()
 	//cocos2d::Vec2 origin_coordinate = Director::getInstance()->getOpenGLView()->getVisibleOrigin();
 	//hero->setPositionX(origin_coordinate.x);
 	return scene;
-}
+}*/
 
 void LoadLayer::onEnter()
 {
@@ -33,11 +33,13 @@ void LoadLayer::onEnter()
 void LoadLayer::dataLoaded(float percent)
 {
 	log("Loading Ready");
-	Rect VisibleRect = Director::getInstance()->getOpenGLView()->getVisibleRect();
+/*	Rect VisibleRect = Director::getInstance()->getOpenGLView()->getVisibleRect();
 	auto scene = Scene::create();	
 	Armature* armature = Armature::create("girl");
 	armature->getAnimation()->play("attack");
-	armature->setPosition(VisibleRect.origin.x + 50, VisibleRect.origin.y);
+	armature->setPosition(VisibleRect.origin.x + 200, VisibleRect.origin.y + 200);
 	scene->addChild(armature);
+	*/
+	auto scene = GameScene::create();
 	Director::getInstance()->replaceScene(scene);
 }
