@@ -28,6 +28,7 @@ void LoadLayer::onEnter()
 	log("onEnter function");
 	// create a new thread to load data
 	ArmatureDataManager::getInstance()->addArmatureFileInfoAsync("ani/hero/girl.ExportJson", this, schedule_selector(LoadLayer::dataLoaded));
+	ArmatureDataManager::getInstance()->addArmatureFileInfoAsync("ani/enemy/monster.ExportJson", this, schedule_selector(LoadLayer::dataLoaded));
 }
 
 void LoadLayer::dataLoaded(float percent)

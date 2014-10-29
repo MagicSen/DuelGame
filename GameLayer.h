@@ -29,7 +29,16 @@ public:
 	CREATE_FUNC(GameLayer);
 
 	CC_SYNTHESIZE(StatusDelegate*, delegator, Delegator);
-	void onTouch();
+
+	void onTouch(const std::vector<Touch *>& touches, Event *event);
+	void onTouchEnd(const std::vector<Touch *>& touches, Event *event);
+	void onTouchUp(const std::vector<Touch *>& touches, Event * event);
+	void onTouchDown();
+	void onTouchRight();
+	void onTouchLeft();
+	void onTouchAttack();
+	
+	void MoveUp(float dt);
 	void setPhyWorld(PhysicsWorld* world){this->world = world;}
 //	void update(float delta);
 	Size visiblesize;
